@@ -1,5 +1,21 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <main class="about">
+    <h2 class="about__title">ABOUT</h2>
+    <p>Welcome to the Harry Potter</p>
+  </main>
 </template>
+
+<script>
+export default {
+  name: "About"
+};
+</script>
+
+<style scoped>
+.about {
+  padding: 20px;
+}
+.about__title {
+  margin: 0;
+}
+</style>
