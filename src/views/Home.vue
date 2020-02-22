@@ -6,7 +6,7 @@
           @search-click="handleSearch" />
         <ul class="home__list">
           <li v-for="(wizard, index) in wizards" :key="index">
-            <wizard-card :wizard="wizard" />
+            <wizard-card :wizard="wizard" @add-to-favourite="handleAddToFavourite" />
           </li>
         </ul>
     </main>
@@ -50,6 +50,9 @@ import WizardCard from '@/components/WizardCard'
           handleSearch (search) {
             this.$router.push({ path: '/', query: { search }})
             this.wizards = this.filterWizards(search)
+          },
+          handleAddToFavourite(wizard) {
+            this.$store.dispatch('addFavouriteWizards', wizard)
           }
         }
     }

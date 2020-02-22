@@ -23,6 +23,10 @@ const router = new VueRouter({
       component: () => import('../views/Wizard.vue')
     },
     {
+      path: "/favourite-wizards",
+      component: () => import('../views/FavouriteWizards.vue')
+    },
+    {
       path: "/universe",
       component: () => import('../views/Universe.vue'),
       children: [

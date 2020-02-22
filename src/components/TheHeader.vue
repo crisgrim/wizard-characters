@@ -4,6 +4,7 @@
     <router-link class="the-header__link" to="/">Home</router-link>
     <router-link class="the-header__link" to="/universe">Universe</router-link>
     <router-link class="the-header__link" to="/about">About</router-link>
+    <router-link class="the-header__link" to="/favourite-wizards">Favourite Wizards</router-link>
     <button
       class="the-header__button"
       v-if="userIsAuthenticated"

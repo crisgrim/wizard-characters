@@ -1,17 +1,20 @@
 <template>
-    <router-link :to="`wizard/${wizard.name}`">
-        <div class="wizard-card">
-            <div class="wizard-card__content">
+    <div class="wizard-card">
+        <div class="wizard-card__content">
+            <router-link :to="`wizard/${wizard.name}`">
                 <h3 class="wizard-card__title">{{ wizard.name }}</h3>
                 <p class="wizard-card__subtitle">{{ wizard.actor }}</p>
                 <p class="wizard-card__subtitle">{{ wizard.house }}</p>
                 <p class="wizard-card__description">{{ wizard.dateOfBirth }}</p>
-            </div>
-            <div class="wizard-card__avatar">
-                <img class="wizard-card__image" :src="wizard.image" :alt="wizard.name"/>
-            </div>
+            </router-link>
+            <button @click="addToFavourite">Favorito</button>
         </div>
-    </router-link>
+        <div class="wizard-card__avatar">
+            <router-link :to="`wizard/${wizard.name}`">
+                <img class="wizard-card__image" :src="wizard.image" :alt="wizard.name"/>
+            </router-link>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -22,6 +25,11 @@
                 type: Object
             }
         },
+        methods: {
+            addToFavourite() {
+                this.$emit('add-to-favourite', this.wizard)
+            }
+        }
     }
 </script>
 
